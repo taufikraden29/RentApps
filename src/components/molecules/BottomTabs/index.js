@@ -1,6 +1,20 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome6";
+import Icon from "react-native-vector-icons/FontAwesome";
+
+const icon = ({ label, focus }) => {
+	switch (label) {
+		case "Home":
+			return focus ? <Icon name="Home" /> : <Icon name="circle" />;
+		case "Favorite":
+			return focus ? <Icon name="Home" /> : <Icon name="circle" />;
+		case "Cart":
+			return focus ? <Icon name="Home" /> : <Icon name="circle" />;
+		case "Settings":
+			return focus ? <Icon name="Home" /> : <Icon name="circle" />;
+	}
+	return <Icon name="Home" size={20} />;
+};
 
 const BottomTabs = ({ state, descriptors, navigation }) => {
 	return (
@@ -44,9 +58,14 @@ const BottomTabs = ({ state, descriptors, navigation }) => {
 						testID={options.tabBarTestID}
 						onPress={onPress}
 						onLongPress={onLongPress}
-						style={{ flex: 1 }}
+						style={{
+							flex: 1,
+							padding: 24,
+							justifyContent: "center",
+							alignItems: "center",
+						}}
 					>
-						<Icon name="fa-home" size={30} color="#900" />
+						<Icon label={label} focus={isFocused} />
 						<Text style={{ color: isFocused ? "#673ab7" : "#222" }}>
 							{label}
 						</Text>

@@ -9,7 +9,7 @@ import {
 	Splashscreen,
 } from "../pages";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import BottomTabs from "../components/molecules/BottomTabs";
+import { BottomTabs } from "../components/molecules";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
